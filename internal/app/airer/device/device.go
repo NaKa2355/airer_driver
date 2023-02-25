@@ -3,13 +3,19 @@ package device
 import (
 	"airer_driver/internal/app/airer/driver"
 	"context"
+	"encoding/json"
 
-	apirem_v1 "github.com/NaKa2355/pirem_pkg/apirem.v1"
+	apirem_v1 "github.com/NaKa2355/pirem/pkg/apirem.v1"
 )
 
 type Device struct {
 	d    *driver.Driver
 	info *apirem_v1.DeviceInfo
+}
+
+type DeviceConfig struct {
+	SpiDevFile string `json:"spi_dev_file"`
+	BusyPin    int    `json:"busy_pin"`
 }
 
 const DriverVersion = "0.1.0"
@@ -33,17 +39,21 @@ func (dev *Device) setInfo() error {
 	return nil
 }
 
-func New(spiDevFile string, busyPinNum int) (*Device, error) {
-	dev := &Device{}
-	d, err := driver.New(spiDevFile, busyPinNum)
+func (dev *Device) Init(ctx context.Context, jsonConf json.RawMessage) error {
+	conf := DeviceConfig{}
+	err := json.Unmarshal(jsonConf, &conf)
 	if err != nil {
-		return dev, err
+		return err
+	}
+	d, err := driver.New(conf.SpiDevFile, conf.BusyPin)
+	if err != nil {
+		return err
 	}
 	dev.d = d
 	if err := dev.setInfo(); err != nil {
-		return dev, err
+		return err
 	}
-	return dev, nil
+	return nil
 }
 
 func (dev *Device) GetDeviceInfo(ctx context.Context) (*apirem_v1.DeviceInfo, error) {
@@ -66,11 +76,11 @@ func (dev *Device) GetDeviceStatus(ctx context.Context) (*apirem_v1.DeviceStatus
 	return status, nil
 }
 
-func (dev *Device) SendIr(ctx context.Context, irData *apirem_v1.RawIrData) error {
+func (dev *Device) SendRawIr(ctx context.Context, irData *apirem_v1.RawIrData) error {
 	return dev.d.SendIr(convertToDriverIrRawData(irData.OnOffPluseNs))
 }
 
-func (dev *Device) ReceiveIr(ctx context.Context) (*apirem_v1.RawIrData, error) {
+func (dev *Device) ReceiveRawIr(ctx context.Context) (*apirem_v1.RawIrData, error) {
 	rawIrData := &apirem_v1.RawIrData{}
 	irData, err := dev.d.ReceiveIr()
 	if err != nil {

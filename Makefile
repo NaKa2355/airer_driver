@@ -10,9 +10,7 @@ GO_FILES:=$(shell find . -type f -name '*.go' -print)
 
 CMD_BIN:=$(CMD_PACKAGES:$(MOD_NAME)/cmd/%=$(CMD_BIN_DIR)/%)
 
-BUILD_OPT:=-ldflags="-s -w" -trimpath -buildmode=plugin
-
-BUILD_ENV := GOOS=linux CGO_ENABLED=1
+BUILD_OPT:=-ldflags="-s -w" -trimpat
 
 .PHONY: clean
 clean:

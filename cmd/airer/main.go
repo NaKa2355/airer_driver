@@ -9,9 +9,9 @@ package main
 
 import (
 	"airer_driver/internal/app/airer/device"
-	"encoding/json"
 
-	dev_ctrler "github.com/NaKa2355/pirem_pkg/device_controller"
+	dev_plugin "github.com/NaKa2355/pirem/pkg/plugin"
+	plugin "github.com/hashicorp/go-plugin"
 )
 
 type Config struct {
@@ -19,11 +19,13 @@ type Config struct {
 	BusyPin    int    `json:"busy_pin"`
 }
 
-func GetController(jsonConfig json.RawMessage) (dev_ctrler.DeviceController, error) {
-	config := Config{}
-	json.Unmarshal(jsonConfig, &config)
-	return device.New(config.SpiDevFile, config.BusyPin)
-}
-
 func main() {
+	plugin.Serve(&plugin.ServeConfig{
+		HandshakeConfig: dev_plugin.Handshake,
+		Plugins: map[string]plugin.Plugin{
+			"device_controller": &dev_plugin.DevicePlugin{Impl: &device.Device{}},
+		},
+
+		GRPCServer: plugin.DefaultGRPCServer,
+	})
 }
