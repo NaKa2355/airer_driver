@@ -2,6 +2,10 @@ github.com/NaKa2355/pirem v0.0.0-20230224213017-020d104feee2 h1:Cwir8kPaNigoNGKt
 github.com/NaKa2355/pirem v0.0.0-20230224213017-020d104feee2/go.mod h1:ZvQ1yZ/ytUwttxkrjcVvNrKt0L/oziIsQw7PH32H4Ak=
 github.com/NaKa2355/pirem v0.0.0-20230225075618-5846377083bb h1:Nui/WJQZOULumWs9EYek8W04VWCrFMWclPcOoXBKruE=
 github.com/NaKa2355/pirem v0.0.0-20230225075618-5846377083bb/go.mod h1:BBD776H7/nfDaB6oTMC0f4YbS11290Q6v75FYxQQ9n8=
+github.com/NaKa2355/pirem v0.0.0-20230225084119-e4a6497b3c69 h1:0s2H/gAvL7vHLWmBojE77hGnVsGqtNRtljThqeSTsQs=
+github.com/NaKa2355/pirem v0.0.0-20230225084119-e4a6497b3c69/go.mod h1:BBD776H7/nfDaB6oTMC0f4YbS11290Q6v75FYxQQ9n8=
+github.com/NaKa2355/pirem v0.0.0-20230225171314-5ec6f73ba2c6 h1:02j+CxS6p/tnR5AeW2Y906+iyn2C7J8ew0R9ROh803g=
+github.com/NaKa2355/pirem v0.0.0-20230225171314-5ec6f73ba2c6/go.mod h1:BBD776H7/nfDaB6oTMC0f4YbS11290Q6v75FYxQQ9n8=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fatih/color v1.7.0 h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=

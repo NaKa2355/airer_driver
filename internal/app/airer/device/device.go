@@ -5,7 +5,7 @@ import (
 	"context"
 	"encoding/json"
 
-	apirem_v1 "github.com/NaKa2355/pirem/pkg/apirem.v1"
+	apirem_v1 "github.com/NaKa2355/pirem/gen/apirem/v1"
 )
 
 type Device struct {
