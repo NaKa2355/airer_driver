@@ -1,11 +1,6 @@
-github.com/NaKa2355/pirem v0.0.0-20230224213017-020d104feee2 h1:Cwir8kPaNigoNGKt9TjKztWpD2mIKMfI3JobBrJxZfQ=
-github.com/NaKa2355/pirem v0.0.0-20230224213017-020d104feee2/go.mod h1:ZvQ1yZ/ytUwttxkrjcVvNrKt0L/oziIsQw7PH32H4Ak=
-github.com/NaKa2355/pirem v0.0.0-20230225075618-5846377083bb h1:Nui/WJQZOULumWs9EYek8W04VWCrFMWclPcOoXBKruE=
-github.com/NaKa2355/pirem v0.0.0-20230225075618-5846377083bb/go.mod h1:BBD776H7/nfDaB6oTMC0f4YbS11290Q6v75FYxQQ9n8=
-github.com/NaKa2355/pirem v0.0.0-20230225084119-e4a6497b3c69 h1:0s2H/gAvL7vHLWmBojE77hGnVsGqtNRtljThqeSTsQs=
-github.com/NaKa2355/pirem v0.0.0-20230225084119-e4a6497b3c69/go.mod h1:BBD776H7/nfDaB6oTMC0f4YbS11290Q6v75FYxQQ9n8=
 github.com/NaKa2355/pirem v0.0.0-20230225171314-5ec6f73ba2c6 h1:02j+CxS6p/tnR5AeW2Y906+iyn2C7J8ew0R9ROh803g=
 github.com/NaKa2355/pirem v0.0.0-20230225171314-5ec6f73ba2c6/go.mod h1:BBD776H7/nfDaB6oTMC0f4YbS11290Q6v75FYxQQ9n8=
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fatih/color v1.7.0 h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
@@ -20,6 +15,7 @@ github.com/hashicorp/go-plugin v1.4.8 h1:CHGwpxYDOttQOY7HOWgETU9dyVjOXzniXDqJcYJ
 github.com/hashicorp/go-plugin v1.4.8/go.mod h1:viDMjcLJuDui6pXb8U4HVfb8AamCWhHGUjr2IrTF67s=
 github.com/hashicorp/yamux v0.0.0-20180604194846-3520598351bb h1:b5rjCoWHc7eqmAS4/qyk21ZsHyb6Mxv/jykxvNTkU4M=
 github.com/hashicorp/yamux v0.0.0-20180604194846-3520598351bb/go.mod h1:+NfK9FKeTrX5uv1uIXGdwYDTeHna2qgaIlx54MXqjAM=
+github.com/jhump/protoreflect v1.6.0 h1:h5jfMVslIg6l29nsMs0D8Wj17RDVdNYti0vDN/PZZoE=
 github.com/jonboulle/clockwork v0.3.0 h1:9BSCMi8C+0qdApAp4auwX0RkLGUjs956h0EkuQymUhg=
 github.com/mattn/go-colorable v0.1.4 h1:snbPLB8fVfU9iwbbo30TPtbLRzwWu6aJS6Xh4eaaviA=
 github.com/mattn/go-colorable v0.1.4/go.mod h1:U0ppj6V5qS13XJ6of8GYAs25YV2eR4EVcfRqFIhoBtE=
@@ -30,8 +26,10 @@ github.com/mitchellh/go-testing-interface v0.0.0-20171004221916-a61a99592b77 h1:
 github.com/mitchellh/go-testing-interface v0.0.0-20171004221916-a61a99592b77/go.mod h1:kRemZodwjscx+RGhAo8eIhFbs2+BFgRtFPeD/KE+zxI=
 github.com/oklog/run v1.0.0 h1:Ru7dDtJNOyC66gQ5dQmaCa0qIsAUFY3sFpK1Xk8igrw=
 github.com/oklog/run v1.0.0/go.mod h1:dlhp/R75TPv97u0XWUtDeV/lRKWPKSdTuV0TZvrmrQA=
+github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
+github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0Q=
 golang.org/x/net v0.7.0 h1:rJrUqqhjsgNp7KqAIc25s9pZnjU7TUcSY7HcVZjdn1g=
 golang.org/x/net v0.7.0/go.mod h1:2Tu9+aMcznHK/AK1HMvgo6xiTLG5rD5rZLDS+rp2Bjs=
 golang.org/x/sys v0.0.0-20190222072716-a9d3bda3a223/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=

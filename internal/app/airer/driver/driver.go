@@ -2,6 +2,7 @@ package driver
 
 import (
 	"bytes"
+	"context"
 	"encoding/binary"
 	"fmt"
 	"time"
@@ -104,14 +105,28 @@ func (d *Driver) getRecvData(dataSize uint16) ([]int16, error) {
 	return irData, nil
 }
 
-func (d *Driver) ReceiveIr() ([]int16, error) {
+func (d *Driver) ReceiveIr(ctx context.Context) ([]int16, error) {
 	var irData []int16
 	if err := d.receiveReq(); err != nil {
 		return irData, err
 	}
-	time.Sleep(50 * time.Microsecond)
-	for d.IsBusy() {
-		time.Sleep(500 * time.Millisecond)
+
+	//wait until becoming busy
+	time.Sleep(500 * time.Millisecond)
+	t := time.NewTicker(500 * time.Millisecond)
+	defer t.Stop()
+
+BusyWait:
+	for {
+		select {
+		case <-ctx.Done():
+			return irData, ctx.Err()
+		case <-t.C:
+			if !d.IsBusy() {
+				t.Stop()
+				break BusyWait
+			}
+		}
 	}
 
 	dataSize, err := d.getRecvDataSize()
@@ -147,7 +162,7 @@ func (d *Driver) IsBusy() bool {
 	return d.busyPin.Read() == gpio.High
 }
 
-func (d *Driver) SendIr(irData []int16) error {
+func (d *Driver) SendIr(ctx context.Context, irData []int16) error {
 	d.buf.Reset()
 	d.buf.Write([]byte{ComSend})
 	if err := binary.Write(d.buf, binary.LittleEndian, irData); err != nil {
@@ -157,10 +172,22 @@ func (d *Driver) SendIr(irData []int16) error {
 	if err := d.spiConn.Tx(d.buf.Bytes(), d.buf.Bytes()); err != nil {
 		return err
 	}
+	//wait until becoming busy
+	time.Sleep(500 * time.Millisecond)
+	t := time.NewTicker(500 * time.Millisecond)
+	defer t.Stop()
 
-	time.Sleep(50 * time.Microsecond)
-	for d.IsBusy() {
-		time.Sleep(500 * time.Millisecond)
+BusyWait:
+	for {
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		case <-t.C:
+			if !d.IsBusy() {
+				t.Stop()
+				break BusyWait
+			}
+		}
 	}
 
 	return d.GetErr()

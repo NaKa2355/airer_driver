@@ -77,12 +77,12 @@ func (dev *Device) GetDeviceStatus(ctx context.Context) (*apirem_v1.DeviceStatus
 }
 
 func (dev *Device) SendRawIr(ctx context.Context, irData *apirem_v1.RawIrData) error {
-	return dev.d.SendIr(convertToDriverIrRawData(irData.OnOffPluseNs))
+	return dev.d.SendIr(ctx, convertToDriverIrRawData(irData.OnOffPluseNs))
 }
 
 func (dev *Device) ReceiveRawIr(ctx context.Context) (*apirem_v1.RawIrData, error) {
 	rawIrData := &apirem_v1.RawIrData{}
-	irData, err := dev.d.ReceiveIr()
+	irData, err := dev.d.ReceiveIr(ctx)
 	if err != nil {
 		return rawIrData, err
 	}

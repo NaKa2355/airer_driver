@@ -25,7 +25,6 @@ func main() {
 		Plugins: map[string]plugin.Plugin{
 			"device_controller": &dev_plugin.DevicePlugin{Impl: &device.Device{}},
 		},
-
 		GRPCServer: plugin.DefaultGRPCServer,
 	})
 }
