@@ -25,14 +25,14 @@ $(CMD_BIN): $(GO_FILES)
 
 .PHONY: install
 install:
-	cp $(CMD_BIN).so $(CMD_INSTALL)
+	cp $(CMD_BIN) $(CMD_INSTALL)
 
 .PHONY: update
 update: install
 
 .PHONY: remove
 remove:
-	rm $(CMD_BIN:$(CMD_BIN_DIR)/%=$(CMD_INSTALL)/%).so
+	rm $(CMD_BIN:$(CMD_BIN_DIR)/%=$(CMD_INSTALL)/%)
 
 .PHONY: purge
 purge: remove

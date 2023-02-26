@@ -10,7 +10,7 @@ package main
 import (
 	"airer_driver/internal/app/airer/device"
 
-	dev_plugin "github.com/NaKa2355/pirem/pkg/plugin"
+	dev_plugin "github.com/NaKa2355/pirem/pkg/device_plugin"
 	plugin "github.com/hashicorp/go-plugin"
 )
 
