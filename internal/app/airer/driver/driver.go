@@ -112,8 +112,8 @@ func (d *Driver) ReceiveIr(ctx context.Context) ([]int16, error) {
 	}
 
 	//wait until becoming busy
-	time.Sleep(500 * time.Millisecond)
-	t := time.NewTicker(500 * time.Millisecond)
+	time.Sleep(100 * time.Millisecond)
+	t := time.NewTicker(100 * time.Millisecond)
 	defer t.Stop()
 
 BusyWait:
@@ -173,8 +173,8 @@ func (d *Driver) SendIr(ctx context.Context, irData []int16) error {
 		return err
 	}
 	//wait until becoming busy
-	time.Sleep(500 * time.Millisecond)
-	t := time.NewTicker(500 * time.Millisecond)
+	time.Sleep(100 * time.Millisecond)
+	t := time.NewTicker(100 * time.Millisecond)
 	defer t.Stop()
 
 BusyWait:

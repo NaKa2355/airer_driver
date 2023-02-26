@@ -91,6 +91,10 @@ func (dev *Device) ReceiveRawIr(ctx context.Context) (*apirem_v1.RawIrData, erro
 	return rawIrData, nil
 }
 
+func (dev *Device) IsBusy(context.Context) (bool, error) {
+	return dev.d.IsBusy(), nil
+}
+
 func (dev *Device) Drop() error {
 	return dev.d.Close()
 }

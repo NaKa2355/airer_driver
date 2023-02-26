@@ -3,7 +3,7 @@ module airer_driver
 go 1.20
 
 require (
-	github.com/NaKa2355/pirem v0.0.0-20230226053536-fd28bf189981
+	github.com/NaKa2355/pirem v0.0.0-20230226085746-85b5cecec260
 	github.com/hashicorp/go-plugin v1.4.8
 	periph.io/x/conn/v3 v3.7.0
 	periph.io/x/host/v3 v3.8.0
