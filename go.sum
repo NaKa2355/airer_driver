@@ -1,9 +1,13 @@
+github.com/NaKa2355/irdeck-proto v0.0.0-20230227182709-8a749e7ea45a h1:ObA4pMH8hpvXcRjOnMXkjmFU9MhcQRHroRMt+xGlo4s=
+github.com/NaKa2355/irdeck-proto v0.0.0-20230227182709-8a749e7ea45a/go.mod h1:8K5eQhsukZOxCj9DFuf1NfckwMIvg6P9f/AETl89rfI=
 github.com/NaKa2355/pirem v0.0.0-20230225171314-5ec6f73ba2c6 h1:02j+CxS6p/tnR5AeW2Y906+iyn2C7J8ew0R9ROh803g=
 github.com/NaKa2355/pirem v0.0.0-20230225171314-5ec6f73ba2c6/go.mod h1:BBD776H7/nfDaB6oTMC0f4YbS11290Q6v75FYxQQ9n8=
 github.com/NaKa2355/pirem v0.0.0-20230226053536-fd28bf189981 h1:1Ir8KleL/SLi6eL908K8pUYfspvL/RCzXGuZP/ppU6U=
 github.com/NaKa2355/pirem v0.0.0-20230226053536-fd28bf189981/go.mod h1:mWv7S5/D//OXJ8iTHg4mIoG53qm2Qgz3EJIR8dmnObE=
 github.com/NaKa2355/pirem v0.0.0-20230226085746-85b5cecec260 h1:UUWxoLwgz7q1durdFJpKnY7KyuKoTPfQjd2d4ht8XzE=
 github.com/NaKa2355/pirem v0.0.0-20230226085746-85b5cecec260/go.mod h1:mWv7S5/D//OXJ8iTHg4mIoG53qm2Qgz3EJIR8dmnObE=
+github.com/NaKa2355/pirem v0.0.0-20230227184106-ae3bd3146ca4 h1:taK7uxG9vYI180jtMU8+Ie80jyjOeqlm1M54PC6gISc=
+github.com/NaKa2355/pirem v0.0.0-20230227184106-ae3bd3146ca4/go.mod h1:fb7dcgHj21GhA9mMO4mcOc4CWrt3gwfn7b4U1WECzfg=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fatih/color v1.7.0 h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=

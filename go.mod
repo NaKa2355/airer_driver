@@ -3,13 +3,14 @@ module airer_driver
 go 1.20
 
 require (
-	github.com/NaKa2355/pirem v0.0.0-20230226085746-85b5cecec260
+	github.com/NaKa2355/pirem v0.0.0-20230227184106-ae3bd3146ca4
 	github.com/hashicorp/go-plugin v1.4.8
 	periph.io/x/conn/v3 v3.7.0
 	periph.io/x/host/v3 v3.8.0
 )
 
 require (
+	github.com/NaKa2355/irdeck-proto v0.0.0-20230227182709-8a749e7ea45a // indirect
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/hashicorp/go-hclog v0.14.1 // indirect

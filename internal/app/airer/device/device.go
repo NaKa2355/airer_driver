@@ -5,12 +5,13 @@ import (
 	"context"
 	"encoding/json"
 
-	apirem_v1 "github.com/NaKa2355/pirem/gen/apirem/v1"
+	irdatav1 "github.com/NaKa2355/irdeck-proto/gen/go/common/irdata/v1"
+	apiremv1 "github.com/NaKa2355/irdeck-proto/gen/go/pirem/api/v1"
 )
 
 type Device struct {
 	d    *driver.Driver
-	info *apirem_v1.DeviceInfo
+	info *apiremv1.DeviceInfo
 }
 
 type DeviceConfig struct {
@@ -22,7 +23,7 @@ const DriverVersion = "0.1.0"
 
 func (dev *Device) setInfo() error {
 	var err error = nil
-	dev.info = &apirem_v1.DeviceInfo{}
+	dev.info = &apiremv1.DeviceInfo{}
 	bufferSize, err := dev.d.GetBufSize()
 	if err != nil {
 		return err
@@ -33,8 +34,8 @@ func (dev *Device) setInfo() error {
 	}
 	dev.info.BufferSize = int32(bufferSize)
 	dev.info.FirmwareVersion = firmVersion
-	dev.info.Service = apirem_v1.DeviceInfo_SERVICE_TYPE_SEND_RECEIVE
-	dev.info.Type = apirem_v1.DeviceInfo_DEVICE_TYPE_WIRED
+	dev.info.Service = apiremv1.DeviceInfo_SERVICE_TYPE_SEND_RECEIVE
+	dev.info.Type = apiremv1.DeviceInfo_DEVICE_TYPE_WIRED
 	dev.info.DriverVersion = DriverVersion
 	return nil
 }
@@ -56,12 +57,12 @@ func (dev *Device) Init(ctx context.Context, jsonConf json.RawMessage) error {
 	return nil
 }
 
-func (dev *Device) GetDeviceInfo(ctx context.Context) (*apirem_v1.DeviceInfo, error) {
+func (dev *Device) GetDeviceInfo(ctx context.Context) (*apiremv1.DeviceInfo, error) {
 	return dev.info, nil
 }
 
-func (dev *Device) GetDeviceStatus(ctx context.Context) (*apirem_v1.DeviceStatus, error) {
-	status := &apirem_v1.DeviceStatus{}
+func (dev *Device) GetDeviceStatus(ctx context.Context) (*apiremv1.DeviceStatus, error) {
+	status := &apiremv1.DeviceStatus{}
 	bufferSize, err := dev.d.GetBufSize()
 	if err != nil {
 		return status, err
@@ -76,12 +77,12 @@ func (dev *Device) GetDeviceStatus(ctx context.Context) (*apirem_v1.DeviceStatus
 	return status, nil
 }
 
-func (dev *Device) SendRawIr(ctx context.Context, irData *apirem_v1.RawIrData) error {
+func (dev *Device) SendRawIr(ctx context.Context, irData *irdatav1.RawIrData) error {
 	return dev.d.SendIr(ctx, convertToDriverIrRawData(irData.OnOffPluseNs))
 }
 
-func (dev *Device) ReceiveRawIr(ctx context.Context) (*apirem_v1.RawIrData, error) {
-	rawIrData := &apirem_v1.RawIrData{}
+func (dev *Device) ReceiveRawIr(ctx context.Context) (*irdatav1.RawIrData, error) {
+	rawIrData := &irdatav1.RawIrData{}
 	irData, err := dev.d.ReceiveIr(ctx)
 	if err != nil {
 		return rawIrData, err
